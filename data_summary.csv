@@ -1,0 +1,7 @@
+    salary,     Degree,    Years,     Num
+Min.   : 29.00  ,Bachelor:16  ,Min.   : 0.140  ,Min.   : 0.000  
+1st Qu.: 40.90  ,Master  :27  ,1st Qu.: 2.260  ,1st Qu.: 0.000  
+Median : 55.90  ,Doctor  :22  ,Median : 5.180  ,Median : 0.000  
+Mean   : 60.02  ,NA,Mean   : 7.959  ,Mean   : 3.446  
+3rd Qu.: 70.60  ,NA,3rd Qu.:12.880  ,3rd Qu.: 5.000  
+Max.   :163.70  ,NA,Max.   :29.540  ,Max.   :42.000  

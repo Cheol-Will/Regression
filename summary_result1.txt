@@ -1,0 +1,22 @@
+
+Call:
+lm(formula = salary ~ Degree + Years + Num, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.058  -3.477  -0.915   3.417  36.909 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   31.4714     2.8691  10.969 5.73e-16 ***
+DegreeMaster  10.8120     3.2183   3.360  0.00136 ** 
+DegreeDoctor  22.6307     3.4846   6.494 1.81e-08 ***
+Years          1.2581     0.2273   5.535 7.23e-07 ***
+Num            1.8523     0.2276   8.137 2.86e-11 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 10.14 on 60 degrees of freedom
+Multiple R-squared:  0.8633,	Adjusted R-squared:  0.8542 
+F-statistic: 94.76 on 4 and 60 DF,  p-value: < 2.2e-16
+

@@ -1,0 +1,62 @@
+---
+title: "Untitled"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+df <- read.delim("C:/Rstudy/Introduction to Regression Analysis/datasets/education1970.txt", 
+                 header=T)
+row.names(df) = df[,1]
+df = df[,2:6]
+region <- df[,5]; region
+region[region == 1] = "Northeast"
+region[region == 2] = "North Central"
+region[region == 3] = "South"
+region[region == 4] = "West"
+region
+region_fac <- factor(region, levels = c("Northeast", "North Central", "South", "West"))
+
+df[,5] <- region_fac;
+plot(df)
+cor(df[,1:4])
+library(HH)
+vif(df[2:4])
+
+result_a <- lm(Y~X1+X2+X3, data = df[,1:4])
+summary(result_a)
+
+result_e <- lm(Y~X1+X2+X3+Region, data = df); summary(result_e)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+result_a <- lm(Y~X1+X2+X3, data = df[,1:4])
+summary(result_a)
+plot(result_a, 1)
+plot(result_a, 2)
+plot(result_a, 4)
+plot(result_a, 5)
+
+plot(result_e, 1)
+plot(result_e, 2)
+plot(result_e, 4)
+plot(result_e, 5)
+
+plot(df[,c(5, 2)])
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
